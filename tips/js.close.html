@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+ <html>
+  <head>
+   <meta charset="utf-8"/>
+   <title>闭包循环问题</title>
+   <link rel="stylesheet" type="text/css" href="../css/tip.css">
+   <style type="text/css">
+   .doc p{
+     background: #fff;
+     color:#000;
+     margin-top: 50px;
+   }
+   </style>
+ </head> 
+ <body>
+<div class="doc">  
+  <p id="p0">段落0</p> 
+  <p id="p1">段落1</p> 
+  <p id="p2">段落2</p> 
+  <p id="p3">段落3</p> 
+  <p id="p4">段落4</p> 
+</div>
+<script type="text/javascript"> 
+//  for( var i=0; i<5; i++ ) { 
+//    document.getElementById("p"+i).onclick=function() { 
+//      alert(i); //访问了父函数的变量i, 闭包 
+//    };
+//  };
+// function test() {    
+//        var temp =10;  
+//        for( var i=0; i< 5; i++ ) { 
+//           document.getElementById("p"+i).onclick=function() { 
+//             alert(temp); //访问了父函数的变量i, 闭包 
+//           }
+//         if(i===1){
+//            var evt = document.createEvent("MouseEvents");
+//            evt.initEvent("click",true,true);
+//            document.getElementById("p1").dispatchEvent(evt);
+//         }
+//        };
+//        temp=20;
+//    }
+// test();
+
+//闭包小例子
+
+// function f1(){
+// 　　　　n=999;
+// 　　　　function f2(){
+// 　　　　　　alert(n);
+// 　　　　}
+// 　　　　return f2;
+// 　　}
+// 　　var result=f1();
+// 　　result(); // 999
+
+
+function f1(){
+　　　　var n=999;
+　　　　nAdd=function(){n+=1}
+　　　　function f2(){
+             var h = n;
+　　　　　　alert(h);
+　　　　}
+        n+=1;
+　　　　return f2;
+　　}
+　　var result=f1();
+　　result(); // 999
+    result();
+　　nAdd();
+　　result(); // 1000
+
+//解决办法
+//将变量i保存在对应的段落的某个属性上：点击查看效果。
+     var pAry = document.getElementsByTagName("p"); 
+     for( var i=0; i< 5; i++ ) { 
+      pAry[i].no = i; 
+      pAry[i].onclick = function() { 
+        alert(this.no); 
+     } 
+   };
+// 加一层闭包，i 以函数参数形式传递给内层函数：点击查看效果。
+//  ~function test() {    
+//      var pAry = document.getElementsByTagName("p");    
+//      for( var i=0; i< pAry.length; i++ ) {    
+//       (function(arg){        
+//        pAry[i].onclick = function() {        
+//           alert(arg);    
+//        };    
+//       })(i);//调用时参数    
+//     }      
+//  }();  
+</script> 
+</body> 
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css/css3</title>
+    <link rel="stylesheet" type="text/css" href="../css/tip.css">
+    <style type="text/css">
+      p{
+      	font-size: 1em;
+      }
+		a:link {color: #FF0000}  
+		a:visited {color: #00FF00}  
+		a:hover {color: #FF00FF}  
+		a:active {color: #0000FF}  
+    </style>
+</head>
+<body>
+    <div class="doc">
+        <h3>1.基础的选择器</h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">
+                    <p align="center">选择器</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">示例</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle" width="24%">
+                    <p align="center">*</p>
+                </td>
+                <td valign="middle" width="43%">
+                    <p align="center">通用元素选择器，匹配任何元素</p>
+                </td>
+                <td valign="middle" width="32%">
+                    <p align="center">* { margin:0; padding:0; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle" width="24%">
+                    <p align="center">E</p>
+                </td>
+                <td valign="middle" width="43%">
+                    <p align="center">标签选择器，匹配所有使用E标签的元素</p>
+                </td>
+                <td valign="middle" width="32%">
+                    <p align="center">p { font-size:2em; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle" width="24%">
+                    <p align="center">.info和E.info</p>
+                </td>
+                <td valign="middle" width="43%">
+                    <p align="center">class选择器，匹配所有class属性中包含info的元素</p>
+                </td>
+                <td valign="middle" width="32%">
+                    <p align="center">.info { background:#ff0; }</p>
+                    <p>p.info { background:#ff0; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle" width="24%">
+                    <p align="center">#info和E#info</p>
+                </td>
+                <td valign="middle" width="43%">
+                    <p align="center">id选择器，匹配所有id属性等于footer的元素</p>
+                </td>
+                <td valign="middle" width="32%">
+                    <p align="center">#info { background:#ff0; }</p>
+                    <p>p#info { background:#ff0; }</p>
+                </td>
+            </tr>
+        </table>
+        <h3></h3>
+        <h3>2.组合选择器</h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">选择器</td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">示例</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E,F</p>
+                </td>
+                <td valign="middle" width="440">
+                    <p align="center">多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号分隔</p>
+                </td>
+                <td valign="middle" width="255">
+                    <p align="center">Div,p { color:#f00; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E F</p>
+                </td>
+                <td valign="middle" width="440">
+                    <p align="center">后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔</p>
+                </td>
+                <td valign="middle" width="255">
+                    <p align="center">#nav li { display:inline; }</p>
+                    <p>li a { font-weight:bold; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E &gt; F</p>
+                </td>
+                <td valign="middle" width="440">
+                    <p align="center">子元素选择器，匹配所有E元素的子元素F</p>
+                </td>
+                <td valign="middle" width="255">
+                    <p align="center">div &gt; strong { color:#f00; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E + F</p>
+                </td>
+                <td valign="middle" width="440">
+                    <p align="center">选择器用于选取第一个指定的元素之后（不是内部）紧跟的元素。</p>
+                </td>
+                <td valign="middle" width="255">
+                    <p align="center">p + p { color:#f00; }</p>
+                </td>
+            </tr>
+        </table>
+        <h3>3.CSS 2.1 属性选择器<span id="more-1635"></span></h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">选择器</td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">示例</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E[att]</p>
+                </td>
+                <td valign="middle" width="439">
+                    <p align="center">匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如&#8220;[cheacked]&#8221;。以下同。）</p>
+                </td>
+                <td valign="middle" width="272">
+                    <p align="center">p[title] { color:#f00; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E[att=val]</p>
+                </td>
+                <td valign="middle" width="439">
+                    <p align="center">匹配所有att属性等于&#8220;val&#8221;的E元素</p>
+                </td>
+                <td valign="middle" width="272">
+                    <p align="center">div[class=&#8221;error&#8221;] { color:#f00; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E[att~=val]</p>
+                </td>
+                <td valign="middle" width="439">
+                    <p align="center">匹配所有att属性具有多个空格分隔的值、其中一个值等于&#8220;val&#8221;的E元素</p>
+                </td>
+                <td valign="middle" width="272">
+                    <p align="center">td[class~=&#8221;name&#8221;] { color:#f00; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E[att|=val]</p>
+                </td>
+                <td valign="middle" width="439">
+                    <p align="center">匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、其中一个值以&#8220;val&#8221;开头的E元素，主要用于lang属性，比如&#8220;en&#8221;、&#8220;en-us&#8221;、&#8220;en-gb&#8221;等等</p>
+                </td>
+                <td valign="middle" width="272">
+                    <p align="center">p[lang|=en] { color:#f00; }</p>
+                </td>
+            </tr>
+        </table>
+        <p><strong>注：CSS 2.1 </strong><strong>属性选择器还有一个特点就是使用多个选择器，同事满足这多个选择器：</strong>blockquote[class=quote][cite] { color:#f00; }</p>
+        <h3>4.CSS 2.1 中的伪类</h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">选择器</td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">示例</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:first-child</p>
+                </td>
+                <td valign="middle" width="388">
+                    <p align="center">匹配父元素的第一个子元素</p>
+                </td>
+                <td valign="middle" width="274" rowspan="7">
+                    <p align="center">p:first-child { font-style:italic; }</p>
+                    <p>input[type=text]:focus { color:#000; background:#ffe; }</p>
+                    <p>input[type=text]:focus:hover { background:#fff; }</p>
+                    <p>q:lang(sv) { quotes: &#8220;\201D&#8221; &#8220;\201D&#8221; &#8220;\2019&#8243; &#8220;\2019&#8243;; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:link</p>
+                </td>
+                <td valign="middle" width="388">
+                    <p align="center">匹配所有未被点击的链接</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:visited</p>
+                </td>
+                <td valign="middle" width="388">
+                    <p align="center">匹配所有已被点击的链接</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:active</p>
+                </td>
+                <td valign="middle" width="388">
+                    <p align="center">匹配鼠标已经其上按下、还没有释放的E元素</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:hover</p>
+                </td>
+                <td valign="middle" width="388">
+                    <p align="center">匹配鼠标悬停其上的E元素</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:focus</p>
+                </td>
+                <td valign="middle" width="388">
+                    <p align="center">匹配获得当前焦点的E元素</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:lang(c)</p>
+                </td>
+                <td valign="middle" width="388">
+                    <p align="center">匹配lang属性等于c的E元素</p>
+                </td>
+            </tr>
+        </table>
+        <h3>5.CSS 2.1中的伪元素</h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">选择器</td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">示例</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:first-line</p>
+                </td>
+                <td valign="middle" width="303">
+                    <p align="center">匹配E元素的第一行</p>
+                </td>
+                <td valign="middle" width="274" rowspan="4">
+                    <p align="center">p:first-line { font-weight:bold; color;#600; }</p>
+                    <p>.preamble:first-letter { font-size:1.5em; font-weight:bold; }</p>
+                    <p>.cbb:before { content:&#8221;"; display:block; height:17px; width:18px; background:url(top.png) no-repeat 0 0; margin:0 0 0 -18px; }</p>
+                    <p>a:link:after { content: &#8221; (&#8221; attr(href) &#8220;) &#8220;; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:first-letter</p>
+                </td>
+                <td valign="middle" width="303">
+                    <p align="center">匹配E元素的第一个字母</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:before</p>
+                </td>
+                <td valign="middle" width="303">
+                    <p align="center">在E元素之前插入生成的内容</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:after</p>
+                </td>
+                <td valign="middle" width="303">
+                    <p align="center">在E元素之后插入生成的内容</p>
+                </td>
+            </tr>
+        </table>
+        <h3>6.CSS 3的同级元素通用选择器</h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">
+                    <p align="center">选择器</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">示例</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E ~ F</p>
+                </td>
+                <td valign="middle" width="398">
+                    <p align="center">匹配任何在E元素之后的同级F元素</p>
+                </td>
+                <td valign="middle" width="211">
+                    <p align="center">p ~ ul { background:#ff0; }</p>
+                </td>
+            </tr>
+        </table>
+        <h3>7．CSS 3 属性选择器</h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">选择器</td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">示例</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E[att^=&#8221;val&#8221;]</p>
+                </td>
+                <td valign="middle" width="290">
+                    <p align="center">属性att的值以&#8221;val&#8221;开头的元素</p>
+                </td>
+                <td valign="middle" width="223" rowspan="3">
+                    <p align="center">div[id^="nav"] { background:#ff0; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E[att$=&#8221;val&#8221;]</p>
+                </td>
+                <td valign="middle" width="290">
+                    <p align="center">属性att的值以&#8221;val&#8221;结尾的元素</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E[att*=&#8221;val&#8221;]</p>
+                </td>
+                <td valign="middle" width="290">
+                    <p align="center">属性att的值包含&#8221;val&#8221;字符串的元素</p>
+                </td>
+            </tr>
+        </table>
+        <h3>8. CSS 3中与用户界面有关的伪类</h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">选择器</td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">示例</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:enabled</p>
+                </td>
+                <td valign="middle" width="367">
+                    <p align="center">匹配表单中激活的元素</p>
+                </td>
+                <td valign="middle" width="287" rowspan="4">
+                    <p align="center">input[type="text"]:disabled { background:#ddd;}</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:disabled</p>
+                </td>
+                <td valign="middle" width="367">
+                    <p align="center">匹配表单中禁用的元素</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:checked</p>
+                </td>
+                <td valign="middle" width="367">
+                    <p align="center">匹配表单中被选中的radio（单选框）或checkbox（复选框）元素</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E::selection</p>
+                </td>
+                <td valign="middle" width="367">
+                    <p align="center">匹配用户当前选中的元素</p>
+                </td>
+            </tr>
+        </table>
+        <h3>9. CSS 3中的结构性伪类</h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">选择器</td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">示例</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:root</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">匹配文档的根元素，对于HTML文档，就是HTML元素</p>
+                </td>
+                <td valign="middle" width="252" rowspan="11">
+                    <p align="center">p:nth-child(3) { color:#f00; }</p>
+                    <p>p:nth-child(odd) { color:#f00; }</p>
+                    <p>p:nth-child(even) { color:#f00; }</p>
+                    <p>p:nth-child(3n+0) { color:#f00; }</p>
+                    <p>p:nth-child(3n) { color:#f00; }</p>
+                    <p>tr:nth-child(2n+11) { background:#ff0; }</p>
+                    <p>tr:nth-last-child(2) { background:#ff0; }</p>
+                    <p>p:last-child { background:#ff0; }</p>
+                    <p>p:only-child { background:#ff0; }</p>
+                    <p>p:empty { background:#ff0; }</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:nth-child(n)</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">匹配其父元素的第n个子元素，第一个编号为1</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:nth-last-child(n)</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">匹配其父元素的倒数第n个子元素，第一个编号为1</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:nth-of-type(n)</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">与:nth-child()作用类似，但是仅匹配使用同种标签的元素</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:nth-last-of-type(n)</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:last-child</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">匹配父元素的最后一个子元素，等同于:nth-last-child(1)</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:first-of-type</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:last-of-type</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1)</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:only-child</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:only-of-type</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:empty</p>
+                </td>
+                <td valign="middle" width="393">
+                    <p align="center">匹配一个不包含任何子元素的元素，注意，文本节点也被看作子元素</p>
+                </td>
+            </tr>
+        </table>
+        <h3>10.CSS 3的反选伪类</h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">选择器</td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center">示例</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:not(s)</p>
+                </td>
+                <td valign="middle" width="390">
+                    <p align="center">匹配不符合当前选择器的任何元素</p>
+                </td>
+                <td valign="middle" width="255">
+                    <p align="center">:not(p) { border:1px solid #ccc; }</p>
+                </td>
+            </tr>
+        </table>
+        <h3>11. CSS 3中的 :target 伪类</h3>
+        <table cellspacing="0" cellpadding="0" width="100%" border="1">
+            <tr>
+                <td valign="middle" width="20%">选择器</td>
+                <td valign="middle" width="40%">
+                    <p align="center">含义</p>
+                </td>
+                <td valign="middle" width="40%">
+                    <p align="center"></p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle">
+                    <p align="center">E:target</p>
+                </td>
+                <td valign="middle" width="417">
+                    <p align="center">匹配文档中特定&#8221;id&#8221;点击后的效果</p>
+                </td>
+                <td valign="middle" width="161">
+                    <p align="center"></p>
+                </td>
+            </tr>
+        </table>
+    <h1>伪类与伪元素的区别</h1>
+    <p>
+    	1.伪类选择元素基于的是当前元素处于的状态，或者说元素当前所具有的特性，而不是元素的id、class、属性等静态的标志。由于状态是动态变化的，所以一个元素达到一个特定状态时，它可能得到一个伪类的样式；当状态改变时，它又会失去这个样式。由此可以看出，它的功能和class有些类似，但它是基于文档之外的抽象，所以叫伪类。
+    </p>
+    <p>
+    	2.实际上，设计伪元素的目的就是去选取诸如元素内容第一个字（母）、第一行，选取某些内容前面或后面这种普通的选择器无法完成的工作。它控制的内容实际上和元素是相同的，但是它本身只是基于元素的抽象，并不存在于文档中，所以叫伪元素。
+    </p>
+    <h1>选择器优先级</h1>
+    <p>通用选择符：0 0 0 0</p>
+    <p>标签选择器：0 0 0 1</p>
+    <p>类选择器：0 0 1 0</p>
+    <p>Id选择器：0 1 0 0</p>
+    <p>important: 1 0 0 0</p>
+    <p>匹配顺序 从左到右</p>
+ </div>
+</body>
+
+</html>

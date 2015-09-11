@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Doctype</title>
+	<link rel="stylesheet" type="text/css" href="../css/tip.css">
+</head>
+<body>
+     <div class="doc">
+	     <h1>Doctype</h1>
+	     <ul>
+		     <li>DOCTYPE 声明必须是 HTML 文档的第一行，位于 html 标签之前。</li>
+		     <li>DOCTYPE 声明不是 HTML 标签；它是指示 web 浏览器关于页面使用哪个 HTML 版本进行编写的指令。</li>
+		     <li>在 HTML 4.01 中，DOCTYPE 声明引用 DTD，因为 HTML 4.01 基于 SGML。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。</li>
+		     <li>HTML5 不基于 SGML，所以不需要引用 DTD。</li>
+	     </ul>
+	     <p class="what">什么鬼？？？</p>
+	     <ul class="explain">
+             <li>SGML 标准通用标记语言</li>
+             <li>HTML 4.01 !DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/***.dtd"</li>
+	         <li>HTML 5 !DOCTYPE html</li>
+	         <li>这些乱七八糟的东西很多都是历史遗留问题，没有必要过多纠结。能写出漂亮的，优雅的网页才是一个开发者应该努力的方向。</li>
+	     </ul>
+     </div>
+     <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+     <script type="text/javascript">
+          $(".what").click(function(event) {
+          	   $(".explain").show(300);
+          });
+     </script>
+</body>
+</html>
