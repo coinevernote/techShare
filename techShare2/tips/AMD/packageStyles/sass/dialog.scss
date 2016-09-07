@@ -1,0 +1,64 @@
+@import "compass/reset";
+@import "compass";
+
+html,body{
+	height: 100%;
+}
+
+.win_dialogBox{
+	position: fixed;
+	z-index: 5;
+	border: 1px solid #999;
+	background-color: #fff;
+	@include box-shadow(0 0 12px rgba(0,0,0,0.5));
+
+	.win_dialogClosed{
+		width: 34px;
+		height: 34px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		background-color: #f90;
+		color: #fff;
+		text-align: center;
+		line-height: 29px;
+		font-size: 30px;
+		font-family: "微软雅黑";
+		cursor: pointer;
+	}
+
+	.win_dialogConfirm{
+		width: 100px;
+		height: 30px;
+		line-height: 30px;
+		color: #fff;
+		background-color: #f60;
+		text-align: center;
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		margin-left: -50px;
+		cursor: default;
+	}
+
+	.win_dialogHead{
+		padding: 10px 0;
+		background-color: #f60;
+		color: #fff;
+		text-align: center;
+		font-size: 14px;
+	}
+	.win_dialogBody{
+		padding: 10px;
+	}
+}
+
+.win_mask{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index: 3;
+}

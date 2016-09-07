@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CommonJS & AMD</title>
+    <link rel="stylesheet" type="text/css" href="../css/tip.css">
+</head>
+<style type="text/css">
+     p {
+        width: 960px;
+        margin: 30px auto;
+     }
+</style>
+
+<body>
+    <h2>CommonJS</h2>
+        <p>CommonJS 规范是为了解决 JavaScript 的作用域问题而定义的模块形式，可以使每个模块它自身的命名空间中执行。该规范的主要内容是，模块必须通过 module.exports 导出对外的变量或接口，通过 require() 来导入其他模块的输出到当前模块作用域中。</p>
+    <h2>AMD</h2>
+        <p>AMD(异步模块定义，Asynchronous Module Definition)</p>
+        <p>为浏览器环境设计的，因为 CommonJS 模块系统是同步加载的，当前浏览器环境还没有准备好同步加载模块的条件。
+AMD 定义了一套 JavaScript 模块依赖异步加载标准，来解决同步加载的问题。</p>
+        <p><a href="./AMD/index.html" target="_blank">AMD</a></p>    
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/tip.css">
+    <title>常见css属性</title>
+</head>
+<style>
+.father {
+    width: 400px;
+    height: 400px;
+    padding: 100px;
+    background: #fff;
+    color: #000;
+    position: relative;
+}
+.son {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    position: absolute;
+}
+.box_border {
+    margin: 10px 0;
+    width: 500px;
+    height: 100px;
+    padding: 10px;
+    background: #fff;
+    border: 10px solid yellow;
+    box-sizing: border-box;
+}
+.box {
+    margin: 10px 0;
+    width: 500px;
+    height: 100px;
+    padding: 10px;
+    background: #fff;
+    border: 10px solid yellow
+}
+.around {
+    width: 500px;
+    padding: 5px;
+    text-align: left;
+    background: #fff;
+    color: #000;
+}
+.around img {
+    margin-top: 10px;
+    float: right;
+}
+.menu {
+    background: #fff;
+}
+.menu ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.menu ul li {
+    float: left;
+    color: #000;
+}
+.menu ul li a {
+    color: #000;
+    display: block;
+    padding: 5px;
+    background: yellow;
+}
+.clearfix:after {
+    content: ".";
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    display: block;
+}
+</style>
+
+<body>
+    <div class="doc">
+        <h1>1.css box</h1>
+        <img src="../images/box.png" width="600">
+        <p>表现形式：</p>
+        <img src="../images/box-detail.gif" width="600">
+        <p>css3 box-sizing</p>
+        <table class="dataintable">
+            <tbody>
+                <tr>
+                    <th style="width:25%;">值</th>
+                    <th>描述</th>
+                </tr>
+
+                <tr>
+                    <td>content-box</td>
+                    <td>
+                        <p>这是由 CSS2.1 规定的宽度高度行为。</p>
+                        <p>宽度和高度分别应用到元素的内容框。</p>
+                        <p>在宽度和高度之外绘制元素的内边距和边框。</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>border-box</td>
+                    <td>
+                        <p>为元素设定的宽度和高度决定了元素的边框盒。</p>
+                        <p>就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。</p>
+                        <p>通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>inherit</td>
+                    <td>规定应从父元素继承 box-sizing 属性的值。</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <div class="box_border"></div>
+            <div class="box"></div>
+        </div>
+        <h1>2.position</h1>
+        <table class="dataintable">
+            <tbody>
+                <tr>
+                    <th>值</th>
+                    <th>描述</th>
+                </tr>
+
+                <tr>
+                    <td>absolute</td>
+                    <td>
+                        <p>生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。</p>
+                        <p>元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>fixed</td>
+                    <td>
+                        <p>生成绝对定位的元素，相对于浏览器窗口进行定位。</p>
+                        <p>元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>relative</td>
+                    <td>
+                        <p>生成相对定位的元素，相对于其正常位置进行定位。</p>
+                        <p>因此，"left:20" 会向元素的 LEFT 位置添加 20 像素。</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>static</td>
+                    <td>默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</td>
+                </tr>
+
+                <tr>
+                    <td>inherit</td>
+                    <td>规定应该从父元素继承 position 属性的值。</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <p>例子：</p>
+            <div class="father">
+                我是父亲
+                <div class="son">
+                    我是儿子
+                </div>
+            </div>
+        </div>
+        <h1>3.z-index</h1>
+        <p>1、z-index起作用的前提是定位，这一点很重要，很多人设置z-index不起作用就是因为这个，更容易忘的是父子层叠的时候。</p>
+        <p>2、层级值的比较，只在同级元素或者同级元素的子元素之间，父子之间不会有这样的比较。</p>
+        <p>3、只要是子元素有着大于等于0的z-index值，那么它就在父元素之上，想在父元素之下，就设置为小于0的值，并且父元素z-index值为auto</p>
+        <h1>4.float</h1>
+        <p>文字环绕效果：</p>
+        <div class="around">
+            <img src="../images/eg_cute.gif" height="50" width="50">
+            <p>
+                This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
+            </p>
+        </div>
+        <p>水平菜单</p>
+        <div class="menu clearfix">
+            <ul>
+                <li><a href="#">Link one</a>
+                </li>
+                <li><a href="#">Link two</a>
+                </li>
+                <li><a href="#">Link three</a>
+                </li>
+                <li><a href="#">Link four</a>
+                </li>
+            </ul>
+        </div>
+        <h1>5.clear</h1>
+        <table class="dataintable">
+            <tbody>
+                <tr>
+                    <th>值</th>
+                    <th>描述</th>
+                </tr>
+
+                <tr>
+                    <td>left</td>
+                    <td>在左侧不允许浮动元素。</td>
+                </tr>
+
+                <tr>
+                    <td>right</td>
+                    <td>在右侧不允许浮动元素。</td>
+                </tr>
+
+                <tr>
+                    <td>both</td>
+                    <td>在左右两侧均不允许浮动元素。</td>
+                </tr>
+
+                <tr>
+                    <td>none</td>
+                    <td>默认值。允许浮动元素出现在两侧。</td>
+                </tr>
+
+                <tr>
+                    <td>inherit</td>
+                    <td>规定应该从父元素继承 clear 属性的值。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

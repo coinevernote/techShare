@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>require 路径</title>
+    <link rel="stylesheet" type="text/css" href="../css/tip.css">
+</head>
+<style type="text/css">
+     p {
+        width: 960px;
+        margin: 30px auto;
+     }
+</style>
+
+<body>
+    <p>1.核心模块总是优先加载 例:require('http') </p>
+    <p>2.模块以 '/' 开头表示使用文件的绝对路径。例:require('/home/marco/foo.js'), 模块以 './' 开头表示调用 require() 时使用相对路径。</p>
+    <p>3.如果不以 '/' 或'./' 开头，且不是一个核心模块，那就从 node_modules 文件夹中加载的模块。</p>
+    <p>从当前模块的父目录+/node_modules 这个位置尝试加载。如果还是没有找到，那么它跳到上层目录并依此类推，直到找到模块，或者达到根目录为止。例:如果在文件 '/home/ry/projects/foo.js' 中调用 require('bar.js')，那么 Node 将在下列位置查找，顺序如下：/home/ry/projects/node_modules/bar.js
+    ,/home/ry/node_modules/bar.js,/home/node_modules/bar.js,/node_modules/bar.js</p>
+</body>
+
+</html>

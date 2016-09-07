@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>前端分享</title>
+	<link rel="stylesheet" type="text/css" href="css/share.css">
+</head>
+<body>
+	<div id="container">
+		<div class="section active" id="section0">
+			<div class="intro">
+				<h1 class="title">Tech Share</h1>
+				<p class="subtitle">前端知识分享</p>
+			</div>
+		</div>
+		<div class="section" id="section1">
+			<div class="intro">
+                <h1>前端到底是什么</h1>
+			</div>
+		</div>
+		<div class="section" id="section2">
+			<div class="intro">
+                <p><img src="images/front.jpg" height="679" width="879"></p>
+			</div>
+		</div>
+		<div class="section" id="section2">
+			<div class="intro">
+				<h1 class="title">HTML/HTML5</h1>
+				<p><a href="tips/Doctype.html" target="_blank">1.Doctype</a></p>
+				<p><a href="tips/meta.html" target="_blank">2.meta</a></p>
+				<p><a href="tips/html.tag.html" target="_blank">3.常见的HTML标签</a></p>
+				<p><a href="tips/html5.layout.html" target="_blank">4.语义化思想</a></p>
+				<p><a href="tips/html5.html" target="_blank">5.HTML5</a></p>
+			</div>
+		</div>
+		<div class="section" id="section3">
+			<div class="intro">
+				<h1 class="title">CSS/CSS3</h1>
+				<p><a href="tips/css.html" target="_blank">1.css选择器</a></p>
+				<p><a href="tips/css.common.html" target="_blank">2.css 常见属性</a></p>
+				<p>4.css HACK</p>
+				<p>5.css3 新特性</p>
+			</div>
+		</div>
+		<div class="section" id="section4">
+			<div class="intro">
+				<h1 class="title">JavaScript</h1>
+				<p><a href="tips/js.common.html" target="_blank">1.冒泡与捕获</a></p>
+				<p><a href="tips/js.close.html" target="_blank">2.闭包</a></p>
+				<p>3.对象</p>
+				<p>4.继承</p>
+			</div>
+		</div>
+		<div class="section" id="section5">
+			<div class="intro">
+				<h1 class="title">移动端</h1>
+				<p>1.viewport</p>
+			</div>
+		</div>
+		<div class="section" id="section6">
+			<div class="intro">
+				<h1 class="title">工具框架</h1>
+				<p>1.jquery</p>
+				<p>2.backbone.js</p>
+				<p>3.bootstrap</p>
+				<p>4.node.js</p>
+			</div>
+		</div>
+		<div class="section" id="section7">
+			<div class="intro">
+				<h1 class="title">性能优化</h1>
+				<p>1.DOM 加载</p>
+				<p>2.懒加载</p>
+				<p>3.cdn原理</p>
+				<p>4.代码压缩</p>
+			</div>
+		</div>
+		<div class="section" id="section8">
+			<div class="intro">
+				<p style="font-size: 100px;">谢谢！！！</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/pageswitch.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#container").switchPage({
+				'loop' : true,
+				'keyboard' : true,
+				'direction' : 'horizontal'
+			});
+		});
+	</script>
+</body>
+</html>
